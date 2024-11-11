@@ -2,10 +2,6 @@
 
 Sistema backend que permite a usuarios autenticados con rol de administrador cargar y validar datos desde archivos CSV a una base de datos PostgreSQL.
 
-## 🚀 Demo
-
-- API URL: [https://your-api-url.com](https://your-api-url.com)
-- Documentación API: [https://your-api-url.com/docs](https://your-api-url.com/docs)
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -24,8 +20,8 @@ Sistema backend que permite a usuarios autenticados con rol de administrador car
 
 1. Clonar el repositorio
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone git@github.com:lizethch/data-upload-system-backend.git
+cd data-upload-system-backend
 ```
 
 2. Instalar dependencias
@@ -37,7 +33,7 @@ npm install
 Crear un archivo `.env` en la raíz del proyecto:
 ```env
 PORT=3000
-DATABASE_URL=postgresql://username:password@localhost:5432/dbname
+DATABASE_URL=postgresql://usernam:password@localhost:5432/dbname
 JWT_SECRET=your-secret-key
 ```
 
@@ -188,6 +184,3 @@ npm run test:coverage
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
 
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
