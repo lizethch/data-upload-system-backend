@@ -34,7 +34,7 @@ export const validateCSV = (row: ICSVRow): ValidationResult => {
     const errors: Record<string, string> = {};
     result.error.issues.forEach((issue) => {
         if (issue.path[0]) {
-            errors[issue.path[0]] = issue.message;
+            errors[issue.path[0].toString()] = issue.message;
         }
     });
 

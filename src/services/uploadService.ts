@@ -9,7 +9,11 @@ interface ProcessResults {
     success: IUser[];
     errors: {
         row: number;
-        details: { database: string } | Record<string, string>
+        details: ICSVRow;
+        validationErrors: {
+            database?: string;
+            [key: string]: string | undefined;
+        };
     }[];
 }
 
@@ -63,16 +67,21 @@ export class UploadService {
             } catch (error) {
                 results.errors.push({
                     row: rowNumber,
-                    details: { database: 'Error al insertar en la base de datos' }
+                    details: row,
+                    validationErrors: {
+                        database: 'Error al insertar en la base de datos'
+                    }
                 });
             }
         } else {
             results.errors.push({
                 row: rowNumber,
-                details: validation.errors
+                details: row,
+                validationErrors: validation.errors
             });
         }
     }
+
 
     private async deleteFile(filePath: string): Promise<void> {
         try {
